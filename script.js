@@ -1,49 +1,46 @@
-/*
-Generate random number
-*/
-
+// Create empty random number variable
 let currentRandomNumber = null;
 
+// Create empty array for the list of numbers (i.e. the player's choices)
+const list = Array(10).fill(null);
+
+// Create variables to enable the list of number to be displayed
+const orderedList = document.createElement("ol");
+const listDiv = document.getElementById("listContainer");
+
+// Create function to start the game and generate the first random number
 function randomNumber() {
+  const startButton = document.querySelector(".start-btn");
+  startButton.classList.add("hidden");
+  listDiv.classList.remove("hidden");
   const i = Math.floor(Math.random() * 999) + 1;
-  document.getElementById("random").textContent = `Number: ${i}`;
+  document.getElementById("current-random-number").textContent = `Number: ${i}`;
+  document.getElementById(
+    "message"
+  ).textContent = `Place ${i} in the above list!`;
   return (currentRandomNumber = i);
 }
 
-/*
-Create an array with 10 null values (it might turn out that UNDEFINED is better than NULL)
-*/
-const list = Array(10).fill(null);
-
-/*
-Display that array on the page, with buttons.
-To do this, I created a div in index.html with id "listContainer"
-Then, create button to place current random number in list on screen.
-*/
-
-const listDiv = document.getElementById("listContainer");
-const orderedList = document.createElement("ol");
+// Display the list array on the page, with buttons
 
 for (let i = 0; i < list.length; i++) {
   const listItem = document.createElement("li");
-  listItem.textContent = list[i];
-
   const listItemButton = document.createElement("button");
   listItemButton.textContent = "Place here";
+  listItem.appendChild(listItemButton);
+  orderedList.appendChild(listItem);
+  listDiv.appendChild(orderedList);
 
+  // Make buttons clickable to select where to place the random number
   listItemButton.addEventListener("click", function () {
     listItemButton.remove();
     let positionedNumber = document.createElement("p");
     listItem.appendChild(positionedNumber);
-    positionedNumber.innerText = currentRandomNumber;
+    list[i] = currentRandomNumber;
+    positionedNumber.innerText = list[i];
     randomNumber();
   });
-
-  listItem.appendChild(listItemButton);
-  orderedList.appendChild(listItem);
 }
-
-listDiv.appendChild(orderedList);
 
 /*
 On click...

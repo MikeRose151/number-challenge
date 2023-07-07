@@ -1,3 +1,11 @@
-.row{
+.row {
   display: flex;
+}
+
+.hidden {
+  display: none;
+}
+
+#current-random-number {
+  font-size: xx-large;
 }
