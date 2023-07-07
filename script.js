@@ -2,12 +2,13 @@
 Generate random number
 */
 
+let currentRandomNumber = null;
+
 function randomNumber() {
   const i = Math.floor(Math.random() * 999) + 1;
-  document.getElementById("random").textContent = `Number: ${i}`
+  document.getElementById("random").textContent = `Number: ${i}`;
+  return (currentRandomNumber = i);
 }
-
-
 
 /*
 Create an array with 10 null values (it might turn out that UNDEFINED is better than NULL)
@@ -29,9 +30,14 @@ for (let i = 0; i < list.length; i++) {
 
   const listItemButton = document.createElement("button");
   listItemButton.textContent = "Place here";
-  // listItemButton.addEventListener("click"), () => {
 
-  // }
+  listItemButton.addEventListener("click", function () {
+    listItemButton.remove();
+    let positionedNumber = document.createElement("p");
+    listItem.appendChild(positionedNumber);
+    positionedNumber.innerText = currentRandomNumber;
+    randomNumber();
+  });
 
   listItem.appendChild(listItemButton);
   orderedList.appendChild(listItem);
@@ -44,6 +50,5 @@ On click...
 1. Remove button
 2. Add the random generated number into the array at position where button was clicked
 */
-
 
 // 3. Validate whether the number fits in that space
