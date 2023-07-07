@@ -29,9 +29,9 @@ for (let i = 0; i < list.length; i++) {
 
   const listItemButton = document.createElement("button");
   listItemButton.textContent = "Place here";
-  listItemButton.addEventListener("click"), () => {
+  // listItemButton.addEventListener("click"), () => {
 
-  }
+  // }
 
   listItem.appendChild(listItemButton);
   orderedList.appendChild(listItem);
