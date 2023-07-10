@@ -91,9 +91,6 @@ for (let i = 0; i < list.length; i++) {
     positionedNumber.innerText = list[i];
     // Generate a new random number
     randomNumber();
-    // Calculate the lower and upper bounds
-    lowerBoundCalculation();
-    upperBoundCalculation();
 
     // Reset the lower/upper bounds, ready for next number
     lowerBound = null;
