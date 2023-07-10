@@ -9,3 +9,14 @@
 #current-random-number {
   font-size: xx-large;
 }
+
+#container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 250px 30%;
+}
+
+.gameover {
+  background-color: rgb(153 22 22 / 94%);
+}
