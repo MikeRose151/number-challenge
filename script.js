@@ -1,6 +1,12 @@
 // Set gameover variable
 let gameover = false;
 
+// Set up scoring
+const currentScore = document.getElementById("currentScore");
+const highScore = document.getElementById("highScore");
+let currentScoreValue = 0;
+let highScoreValue = 0;
+
 // Create empty random number variable
 let currentRandomNumber = null;
 
@@ -22,11 +28,13 @@ function randomNumber() {
 }
 
 // Create function to start the game and generate the first random number
+const startButton = document.querySelector(".start-btn");
 function startGame() {
-  const startButton = document.querySelector(".start-btn");
   startButton.classList.add("hidden");
   listContainer.classList.remove("hidden");
   randomNumber();
+  currentScoreValue = 0;
+  currentScore.textContent = `Current Score: ${currentScoreValue}`;
 }
 
 // Create functions for button validation
@@ -80,6 +88,9 @@ for (let i = 0; i < list.length; i++) {
 
   // Make buttons clickable to select where to place the random number
   listItemButton.addEventListener("click", function () {
+    // Score increases by 1
+    currentScoreValue += 1;
+    currentScore.textContent = `Current Score: ${currentScoreValue}`;
     // Add the new number to the list array - also update the other arrays
     list[i] = currentRandomNumber;
     filteredList = list.filter(Boolean);
@@ -106,6 +117,10 @@ for (let i = 0; i < list.length; i++) {
         : list.indexOf(upperBoundCalculation()))
     ) {
       gameover = true;
+      startButton.classList.remove("hidden");
+      highScoreValue =
+        currentScoreValue > highScoreValue ? currentScoreValue : highScoreValue;
+      highScore.textContent = `High Score: ${highScoreValue}`;
       console.log("Gameover...");
       document.getElementById(
         "message"
