@@ -22,9 +22,9 @@ let filteredList = list.filter(Boolean); // required later for lowerBound
 let filteredReversedList = filteredList.slice().reverse(); // required later for upperBound
 
 // Create functions for button validation
+let lowerBound = null;
 
 const lowerBoundCalculation = function () {
-  let lowerBound = null;
   for (let i = 0; i < filteredReversedList.length; i++) {
     if (currentRandomNumber > filteredReversedList[i]) {
       lowerBound = filteredReversedList[i];
@@ -33,9 +33,9 @@ const lowerBoundCalculation = function () {
   }
   return lowerBound;
 };
+let upperBound = null;
 
 const upperBoundCalculation = function () {
-  let upperBound = null;
   for (let i = 0; i < filteredList.length; i++) {
     if (currentRandomNumber < filteredList[i]) {
       upperBound = filteredList[i];
@@ -51,25 +51,15 @@ const orderedList = document.createElement("ol");
 listContainer.appendChild(orderedList);
 
 // Display the list array on the page, with buttons
+const lowerIndex = () =>
+  lowerBoundCalculation() === null
+    ? 0
+    : list.indexOf(lowerBoundCalculation()) + 1;
 
-/* LOGIC
-Remove null from list array
-e.g. [null, 150, null, 300, 350, null, null, 800, null, 950]
-=> [150, 300, 350, 800, 950]
-
-Create array to note index of existing numbers
-=> [1, 3, 4, 7, 9]
-
-Find where currentRandomNumber fits into listWithoutNull array
-e.g. currentRandomNumber = 500...
-=> lowerBound = 350
-=> upperBound = 800
-
-Take the corresponding index for lowerBound and index for upperBound
-e.g. 4 and 7
-
-Show buttons for (lowerBound < e and upperBound > e)
-*/
+const upperIndex = () =>
+  upperBoundCalculation() === null
+    ? 9
+    : list.indexOf(upperBoundCalculation()) - 1;
 
 for (let i = 0; i < list.length; i++) {
   const listItem = document.createElement("li");
@@ -81,14 +71,17 @@ for (let i = 0; i < list.length; i++) {
 
   // Make buttons clickable to select where to place the random number
   listItemButton.addEventListener("click", function () {
-    listItemButton.remove();
+    listItemButton.classList.add("hidden");
     let positionedNumber = document.createElement("p");
     listItem.appendChild(positionedNumber);
-    list[i] = currentRandomNumber;
-    filteredList = list.filter(Boolean);
-    filteredReversedList = filteredList.slice().reverse();
+    list[i] = currentRandomNumber; // Add the new number to the list array
     positionedNumber.innerText = list[i];
-    randomNumber();
+    filteredList = list.filter(Boolean); // Update because list array got updated
+    filteredReversedList = filteredList.slice().reverse(); // Update because list array got updated
+    randomNumber(); // Generate a new number automatically
+    lowerBoundCalculation(); // Calculate the lower bound
+    upperBoundCalculation(); // Calculate the upper bound
+    // temporarily logging bounds - this seems to be perfectly working ...
     if (
       (lowerBoundCalculation() === null
         ? 1
@@ -104,24 +97,34 @@ for (let i = 0; i < list.length; i++) {
           lowerBoundCalculation() === null
             ? 1
             : list.indexOf(lowerBoundCalculation()) + 2
-        }) - INDEX ${
-          lowerBoundCalculation() === null
-            ? 0
-            : list.indexOf(lowerBoundCalculation()) + 1
-        }`
+        }) - INDEX ${lowerIndex()}`
       );
       console.log(
         `Upper Bound: ${upperBoundCalculation()} (Position ${
           upperBoundCalculation() === null
             ? 10
             : list.indexOf(upperBoundCalculation())
-        }) - INDEX ${
-          upperBoundCalculation() === null
-            ? 9
-            : list.indexOf(upperBoundCalculation()) - 1
-        }`
+        }) - INDEX ${upperIndex()}`
       );
     }
+    lowerBound = null; // Reset the lower bound, ready for next number
+    upperBound = null; // Reset the upper bound, ready for next number
+    const buttons = orderedList.querySelectorAll("button");
+    console.log(`Buttons: ${buttons}`);
+    buttons.forEach((button, i) => {
+      if (i >= lowerIndex() && i <= upperIndex()) {
+        console.log(
+          `${i} is valid because ${i} is between ${lowerIndex()} and ${upperIndex()}`
+        );
+        button.disabled = false;
+      } else {
+        console.log(
+          `${i} is invalid because ${i} is not between ${lowerIndex()} and ${upperIndex()}`
+        );
+        button.disabled = true;
+      }
+    });
+    // ... temporarily logging bounds - this seems to be perfectly working
   });
 }
 
