@@ -90,6 +90,9 @@ function startGame() {
 
   // Reset styling
   document.body.classList.remove("gameover");
+  for (let i = 1; i <= filteredList.length; i++) {
+    document.body.classList.remove(`winning${i}`);
+  }
 
   // Display the list array on the page, with buttons
   for (let i = 0; i < list.length; i++) {
@@ -115,14 +118,24 @@ function startGame() {
       listItem.appendChild(positionedNumber);
       positionedNumber.innerText = list[i];
       // Generate a new random number
-      randomNumber();
+      if (filteredList.length === 10) {
+        document.getElementById("current-random-number").textContent = ``;
+      } else {
+        randomNumber();
+      }
 
       // Reset the lower/upper bounds, ready for next number
       lowerBound = null;
       upperBound = null;
 
       // Check if GAMEOVER - also console log the bounds
-      if (
+      if (filteredList.length === 10) {
+        gameover = true;
+        document.getElementById(
+          "message"
+        ).textContent = `CONGRATULATIONS - you win!`;
+        startButton.classList.remove("hidden");
+      } else if (
         (lowerBoundCalculation() === null
           ? 1
           : list.indexOf(lowerBoundCalculation()) + 2) >
@@ -141,9 +154,13 @@ function startGame() {
         document.getElementById(
           "message"
         ).textContent = `GAMEOVER - you cannot fit ${currentRandomNumber} in the above list!`;
+        for (let i = 1; i <= filteredList.length; i++) {
+          document.body.classList.remove(`winning${i}`);
+        }
         document.body.classList.add("gameover");
         list = Array(10).fill(null);
       } else {
+        document.body.classList.add(`winning${filteredList.length}`);
         console.log("Game continues...");
         console.log(
           `Lower Bound: ${lowerBoundCalculation()} (Position ${
