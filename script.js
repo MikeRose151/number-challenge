@@ -1,3 +1,6 @@
+// Set the number for the challenge
+const num = 10;
+
 // Set gameover variable
 let gameover = false;
 
@@ -11,7 +14,7 @@ let highScoreValue = 0;
 let currentRandomNumber = null;
 
 // Create empty array for the list of numbers (i.e. the player's choices)
-let list = Array(10).fill(null);
+let list = Array(num).fill(null);
 
 // Set up the logic for button validation
 let filteredList = list.filter(Boolean); // required later for lowerBound
@@ -64,7 +67,7 @@ const lowerIndex = () =>
 
 const upperIndex = () =>
   upperBoundCalculation() === null
-    ? 9
+    ? num - 1
     : list.indexOf(upperBoundCalculation()) - 1;
 
 // Create function to start the game and generate the first random number
@@ -118,7 +121,7 @@ function startGame() {
       listItem.appendChild(positionedNumber);
       positionedNumber.innerText = list[i];
       // Generate a new random number
-      if (filteredList.length === 10) {
+      if (filteredList.length === num) {
         document.getElementById("current-random-number").textContent = ``;
       } else {
         randomNumber();
@@ -129,7 +132,7 @@ function startGame() {
       upperBound = null;
 
       // Check if GAMEOVER - also console log the bounds
-      if (filteredList.length === 10) {
+      if (filteredList.length === num) {
         gameover = true;
         document.getElementById(
           "message"
@@ -140,7 +143,7 @@ function startGame() {
           ? 1
           : list.indexOf(lowerBoundCalculation()) + 2) >
         (upperBoundCalculation() === null
-          ? 10
+          ? num
           : list.indexOf(upperBoundCalculation()))
       ) {
         gameover = true;
@@ -158,7 +161,7 @@ function startGame() {
           document.body.classList.remove(`winning${i}`);
         }
         document.body.classList.add("gameover");
-        list = Array(10).fill(null);
+        list = Array(num).fill(null);
       } else {
         document.body.classList.add(`winning${filteredList.length}`);
         console.log("Game continues...");
@@ -172,7 +175,7 @@ function startGame() {
         console.log(
           `Upper Bound: ${upperBoundCalculation()} (Position ${
             upperBoundCalculation() === null
-              ? 10
+              ? num
               : list.indexOf(upperBoundCalculation())
           }) - INDEX ${upperIndex()}`
         );
