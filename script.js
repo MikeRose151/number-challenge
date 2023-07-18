@@ -28,10 +28,10 @@ listContainer.appendChild(orderedList);
 // Create function to generate a random number and display it with a message
 function randomNumber() {
   const i = Math.floor(Math.random() * 999) + 1;
-  document.getElementById("current-random-number").textContent = `Number: ${i}`;
+  document.getElementById("current-random-number").textContent = i;
   document.getElementById(
     "message"
-  ).textContent = `Place ${i} in the above list!`;
+  ).textContent = `Place ${i} in the below list!`;
   return (currentRandomNumber = i);
 }
 
