@@ -58,14 +58,15 @@ body {
   font-weight: 100;
   justify-content: space-between;
   margin: 2% 0px;
-  height: 100vh;
   width: 100%;
 }
 
 #gameboard {
   align-items: center;
-  background-color: green;
+  background-color: rgba(158, 158, 158, 0.66);
+  color: black;
   display: flex;
+  flex: 1;
   justify-content: space-between;
   width: 100%;
 }
