@@ -10,7 +10,7 @@ body {
   background-size: auto 100%;
   color: white;
   display: flex;
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   height: 84vh;
   justify-content: center;
   margin: 0;
@@ -28,11 +28,11 @@ body {
   align-items: center;
   height: 100%;
   padding: 4vh;
-  width: 42%
+  width: 42%;
 }
 
 #title {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 32px;
 }
 
@@ -82,7 +82,7 @@ body {
 }
 
 .winning4 {
-  background-color: rgba(140, 229, 192, 0.4));
+  background-color: rgba(140, 229, 192, 0.4);
 }
 
 .winning5 {
