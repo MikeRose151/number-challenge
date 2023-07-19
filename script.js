@@ -20,13 +20,16 @@ let list = Array(num).fill(null);
 let filteredList = list.filter(Boolean); // required later for lowerBound
 let filteredReversedList = filteredList.slice().reverse(); // required later for upperBound
 
+// Create variable to enable the gameboard background color to be displayed
+const gameboard = document.getElementById("gameboard");
+
 // Create variables to enable the list of number to be displayed
 const listContainer = document.getElementById("list-container");
 const orderedList = document.createElement("ol");
 listContainer.appendChild(orderedList);
 
 // Create variable to enable the rules to be displayed
-const rules = document.getElementById("rules")
+const rules = document.getElementById("rules");
 
 // Create function to generate a random number and display it with a message
 function randomNumber() {
@@ -81,6 +84,7 @@ function startGame() {
   startButton.classList.add("hidden");
   listContainer.classList.remove("hidden");
   rules.classList.remove("hidden");
+  gameboard.style.backgroundColor = "rgba(158, 158, 158, 0.66)";
 
   // Reset random number
   randomNumber();

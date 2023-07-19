@@ -63,7 +63,6 @@ body {
 
 #gameboard {
   align-items: center;
-  background-color: rgba(158, 158, 158, 0.66);
   color: black;
   display: flex;
   flex: 1;
