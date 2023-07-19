@@ -5,8 +5,8 @@ const num = 10;
 let gameover = false;
 
 // Set up scoring
-const currentScore = document.getElementById("currentScore");
-const highScore = document.getElementById("highScore");
+const currentScore = document.getElementById("current-score");
+const highScore = document.getElementById("high-score");
 let currentScoreValue = 0;
 let highScoreValue = 0;
 
@@ -21,7 +21,7 @@ let filteredList = list.filter(Boolean); // required later for lowerBound
 let filteredReversedList = filteredList.slice().reverse(); // required later for upperBound
 
 // Create variables to enable the list of number to be displayed
-const listContainer = document.getElementById("listContainer");
+const listContainer = document.getElementById("list-container");
 const orderedList = document.createElement("ol");
 listContainer.appendChild(orderedList);
 

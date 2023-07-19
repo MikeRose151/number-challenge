@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Asap:wght@500&family=Francois+One&family=Outfit:wght@700&family=Signika+Negative&family=Space+Mono&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Outfit:wght@700&display=swap"
       rel="stylesheet"
     />
     <script src="script.js" defer></script>
@@ -16,15 +16,21 @@
   <body>
     <div id="container">
       <div id="title">10-Number Challenge</div>
+
       <div id="scoreboard">
-        <div class="score">Current Score: 0</div>
-        <div class="score">High Score: 0</div>
+        <div class="score" id="current-score">Current Score: 0</div>
+        <div class="score" id="high-score">High Score: 0</div>
       </div>
+
       <button class="start-btn" onclick="startGame()">Start New Round</button>
+
       <div id="current-random-number"></div>
+
       <p id="message">Click the button to generate a random number!</p>
+
       <div id="gameboard">
-        <div id="listContainer"></div>
+        <div id="list-container" class="hidden">List container</div>
+        <div id="rules">This is how to play</div>
       </div>
     </div>
   </body>
