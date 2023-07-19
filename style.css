@@ -75,6 +75,11 @@ body {
   flex: 1;
 }
 
+li p {
+  margin: 0;
+  padding: 0;
+}
+
 .gameover {
   background-color: rgba(221, 51, 42, 0.684);
 }
