@@ -48,6 +48,36 @@ body {
   font-size: 24px;
   margin: 12%;
   padding: 4%;
+
+  animation-name: bounce;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(-2px);
+  }
+  50% {
+    transform: translateY(
+      2px
+    );
+  }
+}
+
+.start-btn:hover {
+  background-color: #ffaa00;
+  box-shadow: 0 0 4px 4px rgb(174, 255, 248, 0.6);
+
+  animation-duration: 0s;
+}
+
+.start-btn:active {
+  background-color: #000000;
+  box-shadow: 0 0 8px 8px #ffaa00;
+  color: white;;
 }
 
 #current-random-number {
