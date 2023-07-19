@@ -25,6 +25,9 @@ const listContainer = document.getElementById("list-container");
 const orderedList = document.createElement("ol");
 listContainer.appendChild(orderedList);
 
+// Create variable to enable the rules to be displayed
+const rules = document.getElementById("rules")
+
 // Create function to generate a random number and display it with a message
 function randomNumber() {
   const i = Math.floor(Math.random() * 999) + 1;
@@ -77,6 +80,7 @@ function startGame() {
 
   startButton.classList.add("hidden");
   listContainer.classList.remove("hidden");
+  rules.classList.remove("hidden");
 
   // Reset random number
   randomNumber();
