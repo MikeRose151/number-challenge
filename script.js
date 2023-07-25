@@ -41,6 +41,24 @@ function randomNumber() {
   return (currentRandomNumber = i);
 }
 
+// Create function to reduce size of start button and number
+const smallerButtonAndMessage = function () {
+  startButton.style.fontSize = "16px";
+  startButton.style.margin = "2%";
+  startButton.style.padding = "1%";
+  document.getElementById("current-random-number").style.fontSize =
+    "36px";
+};
+
+// Create function to increase size of start button and number
+const regularButtonAndMessage = function () {
+  startButton.style.fontSize = "16px";
+  startButton.style.margin = "2%";
+  startButton.style.padding = "1%";
+  document.getElementById("current-random-number").style.fontSize =
+    "36px";
+};
+
 // Create functions for button validation
 // Lower Bound
 let lowerBound = null;
@@ -146,6 +164,7 @@ function startGame() {
           "message"
         ).textContent = `CONGRATULATIONS - you win!`;
         startButton.classList.remove("hidden");
+        smallerButtonAndMessage();
       } else if (
         (lowerBoundCalculation() === null
           ? 1
@@ -156,6 +175,7 @@ function startGame() {
       ) {
         gameover = true;
         startButton.classList.remove("hidden");
+        smallerButtonAndMessage();
         highScoreValue =
           currentScoreValue > highScoreValue
             ? currentScoreValue

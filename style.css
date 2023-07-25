@@ -61,9 +61,7 @@ body {
     transform: translateY(-2px);
   }
   50% {
-    transform: translateY(
-      2px
-    );
+    transform: translateY(2px);
   }
 }
 
@@ -77,7 +75,7 @@ body {
 .start-btn:active {
   background-color: #000000;
   box-shadow: 0 0 8px 8px #ffaa00;
-  color: white;;
+  color: white;
 }
 
 #current-random-number {
@@ -95,6 +93,7 @@ body {
 
 #gameboard {
   align-items: center;
+  border-radius: 4px;
   color: black;
   display: flex;
   flex: 1;
@@ -103,7 +102,9 @@ body {
 }
 
 #list-container {
+  align-items: center;
   flex: 1;
+  text-align: center;
 }
 
 li p {
