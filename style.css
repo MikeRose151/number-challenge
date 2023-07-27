@@ -112,6 +112,13 @@ li p {
   padding: 0;
 }
 
+li button {
+  background-color: #29030c00;
+  color: white;
+  width: 25%;
+  border-radius: 25%;
+}
+
 .gameover {
   background-color: rgba(221, 51, 42, 0.684);
 }
