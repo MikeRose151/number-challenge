@@ -46,8 +46,7 @@ const smallerButtonAndMessage = function () {
   startButton.style.fontSize = "16px";
   startButton.style.margin = "2%";
   startButton.style.padding = "1%";
-  document.getElementById("current-random-number").style.fontSize =
-    "36px";
+  document.getElementById("current-random-number").style.fontSize = "36px";
 };
 
 // Create function to increase size of start button and number
@@ -55,8 +54,7 @@ const regularButtonAndMessage = function () {
   startButton.style.fontSize = "16px";
   startButton.style.margin = "2%";
   startButton.style.padding = "1%";
-  document.getElementById("current-random-number").style.fontSize =
-    "36px";
+  document.getElementById("current-random-number").style.fontSize = "36px";
 };
 
 // Create functions for button validation
@@ -100,6 +98,7 @@ function startGame() {
   gameover = false;
 
   startButton.classList.add("hidden");
+  document.querySelector("#current-random-number").style.fontSize = "80px";
   listContainer.classList.remove("hidden");
   rules.classList.remove("hidden");
   gameboard.style.backgroundColor = "rgba(158, 158, 158, 0.66)";
@@ -184,7 +183,7 @@ function startGame() {
         console.log("Gameover...");
         document.getElementById(
           "message"
-        ).textContent = `GAMEOVER - you cannot fit ${currentRandomNumber} in the above list!`;
+        ).textContent = `GAMEOVER - you cannot fit ${currentRandomNumber} in the below list!`;
         for (let i = 1; i <= filteredList.length; i++) {
           document.body.classList.remove(`winning${i}`);
         }
