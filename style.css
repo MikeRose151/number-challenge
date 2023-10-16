@@ -23,6 +23,8 @@ li {
 
 ol {
   padding-inline-start: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 #container {
@@ -113,7 +115,8 @@ ol {
 #list-container {
   align-items: center;
   text-align: center;
-  padding: 4% 4% 4% 6%;
+  padding: 1% 4% 1% 6%;
+  justify-content: space-between;
 }
 
 #rules {
@@ -133,6 +136,7 @@ li button {
   color: white;
   width: 100%;
   border-radius: 25%;
+  margin: 4%;
 }
 
 .gameover {
