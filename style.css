@@ -17,6 +17,14 @@ body {
   padding: 8vh;
 }
 
+li {
+  width: 100px;
+}
+
+ol {
+  padding-inline-start: 10px;
+}
+
 #container {
   background-color: rgba(82, 0, 22, 0.5);
   border: 1px solid white;
@@ -79,7 +87,11 @@ body {
 }
 
 #current-random-number {
-  font-size: 144px;
+  font-size: 80px;
+}
+
+#message {
+  margin-bottom: 2%;
 }
 
 #scoreboard {
@@ -95,22 +107,20 @@ body {
   align-items: center;
   border-radius: 4px;
   display: flex;
-  flex: 1;
-  justify-content: space-between;
   width: 100%;
 }
 
 #list-container {
   align-items: center;
-  flex: 1;
   text-align: center;
+  padding: 4% 4% 4% 6%;
 }
 
 #rules {
   align-items: center;
-  flex: 1;
   text-align: left;
-  font-size: small;
+  font-size: 12px;
+  padding: 4%;
 }
 
 li p {
@@ -121,7 +131,7 @@ li p {
 li button {
   background-color: #29030c00;
   color: white;
-  width: 25%;
+  width: 100%;
   border-radius: 25%;
 }
 
