@@ -176,6 +176,14 @@ li button:disabled {
         font-size: 1em;
       }
 
+      .current-random-number-larger {
+        font-size: 5em;
+      }
+
+      .current-random-number-smaller {
+        font-size: 2em;
+      }
+
       @media (max-width: 480px) {
         #title {
           font-size: 1.5em;
@@ -185,12 +193,28 @@ li button:disabled {
           font-size: 0.8em;
         }
 
+        .current-random-number-larger {
+          font-size: 3em;
+        }
+
+        .current-random-number-smaller {
+          font-size: 1em;
+        }
+
+        #message {
+          font-size: 0.8em;
+        }
+
         @media (max-width: 400px) {
           #title {
             font-size: 1em;
           }
 
           #scoreboard {
+            font-size: 0.6em;
+          }
+
+          #message {
             font-size: 0.6em;
           }
         }
