@@ -46,7 +46,12 @@ const smallerButtonAndMessage = function () {
   startButton.style.fontSize = "16px";
   startButton.style.margin = "2%";
   startButton.style.padding = "1%";
-  document.getElementById("current-random-number").style.fontSize = "3em";
+  document
+    .querySelector("#current-random-number")
+    .classList.remove("current-random-number-larger");
+  document
+    .querySelector("#current-random-number")
+    .classList.add("current-random-number-smaller");
 };
 
 // // Create function to increase size of start button and number
@@ -98,7 +103,12 @@ function startGame() {
   gameover = false;
 
   startButton.classList.add("hidden");
-  document.querySelector("#current-random-number").style.fontSize = "7em";
+  document
+    .querySelector("#current-random-number")
+    .classList.remove("current-random-number-smaller");
+  document
+    .querySelector("#current-random-number")
+    .classList.add("current-random-number-larger");
   listContainer.classList.remove("hidden");
   rules.classList.remove("hidden");
   gameboard.style.backgroundColor = "rgba(158, 158, 158, 0.66)";
