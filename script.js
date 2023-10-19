@@ -46,16 +46,16 @@ const smallerButtonAndMessage = function () {
   startButton.style.fontSize = "16px";
   startButton.style.margin = "2%";
   startButton.style.padding = "1%";
-  document.getElementById("current-random-number").style.fontSize = "36px";
+  document.getElementById("current-random-number").style.fontSize = "3em";
 };
 
-// Create function to increase size of start button and number
-const regularButtonAndMessage = function () {
-  startButton.style.fontSize = "16px";
-  startButton.style.margin = "2%";
-  startButton.style.padding = "1%";
-  document.getElementById("current-random-number").style.fontSize = "36px";
-};
+// // Create function to increase size of start button and number
+// const regularButtonAndMessage = function () {
+//   startButton.style.fontSize = "16px";
+//   startButton.style.margin = "2%";
+//   startButton.style.padding = "1%";
+//   document.getElementById("current-random-number").style.fontSize = "3em";
+// };
 
 // Create functions for button validation
 // Lower Bound
@@ -98,7 +98,7 @@ function startGame() {
   gameover = false;
 
   startButton.classList.add("hidden");
-  document.querySelector("#current-random-number").style.fontSize = "80px";
+  document.querySelector("#current-random-number").style.fontSize = "7em";
   listContainer.classList.remove("hidden");
   rules.classList.remove("hidden");
   gameboard.style.backgroundColor = "rgba(158, 158, 158, 0.66)";
