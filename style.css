@@ -133,7 +133,7 @@ ol {
   background-color: white;
   color: rgba(82, 0, 22);
   border: none;
-  padding: 6px 12px;
+  padding: 24px 12px;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -168,8 +168,14 @@ li button {
   padding: 2%;
 }
 
+li button:hover {
+  background-color: #29030c00;
+  color: rgba(82, 0, 22);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 li button:disabled {
-  color: rgb(160, 160, 160);
+  color: rgba(160, 160, 160, 0.5);
 }
 
 @media (max-width: 740px) {
