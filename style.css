@@ -25,7 +25,7 @@ ol {
 }
 
 #container {
-  background-color: rgba(192, 167, 174, 0.5);
+  background-color: rgba(82, 0, 22, 0.5);
   border: 1px solid white;
   border-radius: 32px;
   box-shadow: 0 0 4px 4px rgb(174, 255, 248, 0.4);
@@ -173,7 +173,7 @@ li button:disabled {
 
 @media (max-width: 740px) {
   body {
-    padding: 0vh;
+    padding: 8vh 4vh;
   }
 
   #container {
@@ -194,6 +194,10 @@ li button:disabled {
     }
 
     @media (max-width: 560px) {
+      body {
+        padding: 8vh 2vh;
+      }
+
       #title {
         font-size: 2em;
       }
@@ -232,6 +236,10 @@ li button:disabled {
         }
 
         @media (max-width: 400px) {
+          body {
+            padding: 8vh 1vh;
+          }
+
           #title {
             font-size: 1em;
           }
