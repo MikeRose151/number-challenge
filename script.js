@@ -152,7 +152,7 @@ function startGame() {
       filteredReversedList = filteredList.slice().reverse();
       // Replace button with number
       listItemButton.classList.add("hidden");
-      let positionedNumber = document.createElement("p");
+      let positionedNumber = document.createElement("span");
       listItem.appendChild(positionedNumber);
       positionedNumber.innerText = list[i];
       // Generate a new random number

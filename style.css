@@ -120,21 +120,46 @@ ol {
 #list-container {
   align-items: center;
   text-align: center;
-  padding: 1% 4% 1% 6%;
   justify-content: space-between;
+  width: 100%;
 }
 
 #rules {
-  align-items: center;
   text-align: left;
-  font-size: 1em;
-  padding: 4%;
+  font-size: 0.8em;
+  line-height: 1.5;
+  font-family: sans-serif;
+  width: 30%;
 }
 
-li p {
+#rules button {
+  background-color: white;
+  color: rgba(82, 0, 22);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: solid 1px white;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#rules button:hover {
+  background-color: rgba(82, 0, 22);
+  color: white;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+li {
+  align-self: center;
+  width: 30%;
+  margin-left: 28%;
+}
+
+li span {
   margin: 0;
   padding: 0;
-  font-size: 2em;
+  font-size: 2.3em;
 }
 
 li button {
@@ -142,7 +167,8 @@ li button {
   color: white;
   width: 100%;
   border-radius: 25%;
-  margin: 4%;
+  margin: 2%;
+  padding: 2%;
 }
 
 li button:disabled {
