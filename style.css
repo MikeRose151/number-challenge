@@ -172,6 +172,10 @@ li button:disabled {
 }
 
 @media (max-width: 740px) {
+  body {
+    padding: 0vh;
+  }
+
   #container {
     width: 100%;
   }
